@@ -1,8 +1,0 @@
-package com.bc.jlopez;
-
-import org.springframework.boot.test.context.TestConfiguration;
-
-@TestConfiguration(proxyBeanMethods = false)
-class TestcontainersConfiguration {
-
-}

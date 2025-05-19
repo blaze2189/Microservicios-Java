@@ -1,7 +1,7 @@
-package com.bc.jlopez.service;
+package com.bc.jlopez.domain.service;
 
-import com.bc.jlopez.entity.Airport;
-import com.bc.jlopez.repository.AirportDAO;
+import com.bc.jlopez.infrastructure.outbound.database.entity.Airport;
+import com.bc.jlopez.infrastructure.outbound.database.repository.AirportDAO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,4 +1,4 @@
-package com.bc.jlopez.entity;
+package com.bc.jlopez.infrastructure.outbound.database.entity;
 
 import jakarta.persistence.Id;
 import jakarta.persistence.IdClass;

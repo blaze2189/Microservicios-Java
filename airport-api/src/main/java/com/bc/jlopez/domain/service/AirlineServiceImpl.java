@@ -1,7 +1,7 @@
-package com.bc.jlopez.service;
+package com.bc.jlopez.domain.service;
 
-import com.bc.jlopez.entity.Airline;
-import com.bc.jlopez.repository.AirlineDAO;
+import com.bc.jlopez.infrastructure.outbound.database.entity.Airline;
+import com.bc.jlopez.infrastructure.outbound.database.repository.AirlineDAO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +27,7 @@ public final class AirlineServiceImpl implements AirlineService {
         logger.info("Code received {}", code);
         var airline = airlineDAO.findByCode(code);
 
-        return Optional.ofNullable(airline).orElse(new Airline());
+        return airline;
 
     }
 
@@ -37,8 +37,9 @@ public final class AirlineServiceImpl implements AirlineService {
         logger.info("finding all airports");
 
         var list = airlineDAO.findAll();
+        Optional.of(list).orElse(null);
         list.forEach(a -> logger.info(a.toString()));
 
-        return airlineDAO.findAll();
+        return list;
     }
 }

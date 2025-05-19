@@ -1,14 +1,16 @@
-package com.bc.jlopez.controller;
+package com.bc.jlopez.infrastructure.inbound.controller;
 
-import com.bc.jlopez.entity.Flight;
-import com.bc.jlopez.service.FlightService;
+import com.bc.jlopez.infrastructure.outbound.database.entity.Flight;
+import com.bc.jlopez.domain.service.FlightService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/flight")
@@ -21,15 +23,19 @@ public class FlightController {
     }
 
     @GetMapping("/{airline}")
-    public List<Flight> findFlightByAirline(@PathVariable(required = true) String airline){
+    public ResponseEntity<List<Flight>> findFlightByAirline(@PathVariable(required = true) String airline){
 
-        return flightService.getFlightByAirline(airline);
+        var flightList = flightService.getFlightByAirline(airline);
+
+        return ResponseEntity.ofNullable(flightList);
     }
 
     @GetMapping
-    public List<Flight> findAll(){
+    public ResponseEntity<List<Flight>> findAll(){
 
-        return flightService.findAll();
+        var flightList = flightService.findAll();
+
+        return ResponseEntity.ofNullable(flightList);
     }
 
 }

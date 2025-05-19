@@ -33,10 +33,11 @@ CONSTRAINT fk_flight_origin FOREIGN KEY (origin) REFERENCES AIRPORT(code),
 CONSTRAINT fk_flight_destiny FOREIGN KEY (destiny) REFERENCES AIRPORT(code));
 
 -- catalog for frequence
-CREATE TABLE FREQUENCE (code integer PRIMARY KEY,
+CREATE TABLE FREQUENCE (code integer,
 code_flight varchar(3),
 code_airline varchar(2),
 code_day varchar(1),
+PRIMARY KEY (code),
 CONSTRAINT fk_frequence_flight FOREIGN KEY (code_flight,code_airline) REFERENCES FLIGHT(code,code_airline)
 );
 ALTER TABLE FREQUENCE
@@ -72,3 +73,6 @@ INSERT INTO FLIGHT (code,code_airline,origin,destiny,day_time) VALUES ('018','AM
 INSERT INTO FLIGHT (code,code_airline,origin,destiny,day_time) VALUES ('020','AM','AICM','AICM','10:30:00');
 
 INSERT INTO FREQUENCE (code,code_flight,code_airline,code_day) VALUES ('1','019','AM','M');
+
+
+

@@ -1,6 +1,6 @@
-package com.bc.jlopez.repository;
+package com.bc.jlopez.infrastructure.outbound.database.repository;
 
-import com.bc.jlopez.entity.Airline;
+import com.bc.jlopez.infrastructure.outbound.database.entity.Airline;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

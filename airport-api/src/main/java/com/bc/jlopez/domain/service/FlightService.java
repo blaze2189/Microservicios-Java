@@ -1,6 +1,6 @@
-package com.bc.jlopez.service;
+package com.bc.jlopez.domain.service;
 
-import com.bc.jlopez.entity.Flight;
+import com.bc.jlopez.infrastructure.outbound.database.entity.Flight;
 
 import java.util.List;
 

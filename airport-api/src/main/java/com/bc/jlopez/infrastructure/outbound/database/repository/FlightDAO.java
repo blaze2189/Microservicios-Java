@@ -1,7 +1,6 @@
-package com.bc.jlopez.repository;
+package com.bc.jlopez.infrastructure.outbound.database.repository;
 
-import com.bc.jlopez.entity.Airport;
-import com.bc.jlopez.entity.Flight;
+import com.bc.jlopez.infrastructure.outbound.database.entity.Flight;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

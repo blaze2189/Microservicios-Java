@@ -1,9 +1,10 @@
-package com.bc.jlopez.controller;
+package com.bc.jlopez.infrastructure.inbound.controller;
 
 
-import com.bc.jlopez.entity.Airport;
-import com.bc.jlopez.service.AirportService;
+import com.bc.jlopez.infrastructure.outbound.database.entity.Airport;
+import com.bc.jlopez.domain.service.AirportService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,15 +23,19 @@ public class AirportController {
     }
 
     @GetMapping("/{code}")
-    public Airport getAirportByCode(@PathVariable(required = false) String code) {
+    public ResponseEntity<Airport> getAirportByCode(@PathVariable(required = false) String code) {
 
-        return airportService.findByCode(code);
+        var airport = airportService.findByCode(code);
+
+        return ResponseEntity.ofNullable(airport);
     }
 
     @GetMapping("")
-    public List<Airport> getAllAirports() {
+    public ResponseEntity<List<Airport>> getAllAirports() {
 
-        return airportService.findAll();
+        var airportList= airportService.findAll();
+
+        return ResponseEntity.ofNullable(airportList);
     }
 
 }

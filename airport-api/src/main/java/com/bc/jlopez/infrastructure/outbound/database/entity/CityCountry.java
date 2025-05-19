@@ -1,7 +1,6 @@
-package com.bc.jlopez.entity;
+package com.bc.jlopez.infrastructure.outbound.database.entity;
 
 import jakarta.persistence.*;
-import org.hibernate.usertype.UserType;
 
 import java.io.Serializable;
 

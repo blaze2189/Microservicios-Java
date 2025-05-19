@@ -1,13 +1,12 @@
-package com.bc.jlopez.service;
+package com.bc.jlopez.domain.service;
 
-import com.bc.jlopez.entity.Flight;
-import com.bc.jlopez.repository.FlightDAO;
+import com.bc.jlopez.infrastructure.outbound.database.entity.Flight;
+import com.bc.jlopez.infrastructure.outbound.database.repository.FlightDAO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
