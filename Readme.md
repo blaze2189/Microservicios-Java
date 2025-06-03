@@ -10,7 +10,7 @@ Consulta de endpoints mediante [swagger](http://localhost:8082/swagger-ui/index.
 
 ## [sales-api](./sales-api)
 
-Ejecución de compra (PUT): http://localhost:8083/flight/buy/{flightCode}/{tickets}
+Ejecución de compra (PUT): http://localhost:8083/flight/buy/{flightCode}/{tickets}  
  lista de flightCode vàlidos:
 -  MAM019
 -  TAM019
@@ -25,12 +25,12 @@ Ejecución de compra (PUT): http://localhost:8083/flight/buy/{flightCode}/{ticke
 tickets es la cantidad de boletos a comprar.
 
 Bùsqueda de vuelos disponibles: [http://localhost:8083/flight?from=CITYO&to=CITYT&date=FECHA](http://localhost:8083/flight?from=NY&to=CDMX&date=08-07-25)
-donde 
-CITYTO es la ciudad de origin.  
-CITYT es la ciudad de destino.  
-FECHA la fecha del vuelo que se requiere.  
+donde  
+`CITYTO` es la ciudad de origin.  
+`CITYT` es la ciudad de destino.  
+`FECHA` la fecha del vuelo que se requiere.  
 
-Valores vàlidos para CITYT y CITYO: CDMX y NY.
+Valores vàlidos para  `CITYT` y `CITYO: CDMX y NY.
 
 
 ### Testing project
