@@ -10,7 +10,7 @@ public class CityCountry implements Serializable {
 
     @Id
     private String cityCode;
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="country_code")
     private Country countryCode;
     private String cityName;
