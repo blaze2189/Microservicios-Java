@@ -20,7 +20,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 public class PostgresTesting {
 
     private static final String DB_CONTAINER_NAME = "airport_db";
-    private static final String DB_CONTAINER_VERSION ="02";
+    private static final String DB_CONTAINER_VERSION ="05";
     private static final DockerImageName DOCKER_IMAGE_NAME = DockerImageName.
             parse(DB_CONTAINER_NAME+":"+DB_CONTAINER_VERSION).
             asCompatibleSubstituteFor("postgres");

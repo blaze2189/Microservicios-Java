@@ -9,8 +9,8 @@ import java.io.Serializable;
 public class Frequence implements Serializable {
 
     @Id
-    private Integer code;
-   @ManyToOne
+    private String code;
+   @ManyToOne(cascade = CascadeType.ALL)
    @JoinColumns({
            @JoinColumn(name = "code_flight",referencedColumnName = "code"),
            @JoinColumn(name = "code_airline",referencedColumnName = "codeAirline")
@@ -21,7 +21,7 @@ public class Frequence implements Serializable {
     public Frequence() {
     }
 
-    public Integer getCode() {
+    public String getCode() {
         return code;
     }
 

@@ -33,7 +33,7 @@ CONSTRAINT fk_flight_origin FOREIGN KEY (origin) REFERENCES AIRPORT(code),
 CONSTRAINT fk_flight_destiny FOREIGN KEY (destiny) REFERENCES AIRPORT(code));
 
 -- catalog for frequence
-CREATE TABLE FREQUENCE (code integer,
+CREATE TABLE FREQUENCE (code varchar(6),
 code_flight varchar(3),
 code_airline varchar(2),
 code_day varchar(1),
@@ -42,7 +42,7 @@ CONSTRAINT fk_frequence_flight FOREIGN KEY (code_flight,code_airline) REFERENCES
 );
 ALTER TABLE FREQUENCE
 ADD CONSTRAINT valid_day
-CHECK (code_day IN ('M','T','W','X','S','U'));
+CHECK (code_day IN ('M','T','W','X','F','S','U'));
 
 INSERT INTO AIRLINE (code,name) VALUES ('AM','Aeromexico');
 INSERT INTO AIRLINE (code,name) VALUES ('AA','American Airline');
@@ -72,7 +72,12 @@ INSERT INTO FLIGHT (code,code_airline,origin,destiny,day_time) VALUES ('019','AM
 INSERT INTO FLIGHT (code,code_airline,origin,destiny,day_time) VALUES ('018','AM','EWR','AICM','13:00:00');
 INSERT INTO FLIGHT (code,code_airline,origin,destiny,day_time) VALUES ('020','AM','AICM','AICM','10:30:00');
 
-INSERT INTO FREQUENCE (code,code_flight,code_airline,code_day) VALUES ('1','019','AM','M');
-
-
-
+INSERT INTO FREQUENCE (code,code_flight,code_airline,code_day) VALUES ('MAM019','019','AM','M');
+INSERT INTO FREQUENCE (code,code_flight,code_airline,code_day) VALUES ('TAM019','019','AM','T');
+INSERT INTO FREQUENCE (code,code_flight,code_airline,code_day) VALUES ('WAM019','019','AM','W');
+INSERT INTO FREQUENCE (code,code_flight,code_airline,code_day) VALUES ('FAM019','019','AM','F');
+INSERT INTO FREQUENCE (code,code_flight,code_airline,code_day) VALUES ('SAM019','019','AM','S');
+INSERT INTO FREQUENCE (code,code_flight,code_airline,code_day) VALUES ('FAM020','020','AM','F');
+INSERT INTO FREQUENCE (code,code_flight,code_airline,code_day) VALUES ('MAM020','020','AM','M');
+INSERT INTO FREQUENCE (code,code_flight,code_airline,code_day) VALUES ('UAM020','020','AM','U');
+INSERT INTO FREQUENCE (code,code_flight,code_airline,code_day) VALUES ('TAM018','018','AM','T');

@@ -1,0 +1,38 @@
+version: "2.2"
+services:
+  airport-db:
+    image: jrgalc2189/airport-db:01
+    ##build: ./airport-api/src/main/resources/docker/database
+    ports:
+      - "7008:5432"
+    networks:
+      - bootcamp
+  sales-db:
+    image: jrgalc2189/sales-db:01
+    ##build: ./sales-api/src/main/resources/docker/database
+    ports:
+      - "7007:5432"
+    networks:
+      - bootcamp
+  airport-api:
+    image: jrgalc2189/airport-api:01
+    ##build: ./airport-api/src/main/resources/docker/java
+    ports:
+      - "8082:8080"
+    links:
+      - airport-db
+    networks:
+      - bootcamp
+  sales-api:
+    image: jrgalc2189/sales-api:01
+    ##build: ./sales-api/src/main/resources/docker/java
+    ports:
+      - "8083:8082"
+    links:
+      - sales-db
+      - airport-api
+    networks:
+      - bootcamp
+networks:
+  bootcamp:
+    driver: "bridge"
