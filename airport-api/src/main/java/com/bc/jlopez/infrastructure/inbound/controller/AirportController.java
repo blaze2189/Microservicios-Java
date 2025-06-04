@@ -1,6 +1,5 @@
 package com.bc.jlopez.infrastructure.inbound.controller;
 
-
 import com.bc.jlopez.infrastructure.outbound.database.entity.Airport;
 import com.bc.jlopez.domain.service.AirportService;
 import org.springframework.beans.factory.annotation.Autowired;
