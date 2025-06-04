@@ -10,6 +10,8 @@ Consulta de endpoints mediante [swagger](http://localhost:8082/swagger-ui/index.
 
 ## [sales-api](./sales-api)
 
+Consulta de endpoints mediante [swagger](http://localhost:8083/swagger-ui/index.html).
+
 Ejecución de compra (PUT): http://localhost:8083/flight/buy/{flightCode}/{tickets}  
  lista de flightCode vàlidos:
 -  MAM019
